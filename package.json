@@ -1,42 +1,64 @@
 {
-  "name": "poker-ai",
+  "name": "my-midway-project",
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "egg": {
-    "declarations": true
-  },
   "dependencies": {
-    "egg": "^2.15.1",
+    "@midwayjs/decorator": "^2.3.0",
+    "@midwayjs/typegoose": "^2.0.0",
+    "@midwayjs/web": "^2.3.0",
+    "@typegoose/typegoose": "^7.4.7",
+    "axios": "^0.21.1",
+    "cos-nodejs-sdk-v5": "^2.9.12",
+    "crypto": "^1.0.1",
+    "egg": "^2.0.0",
     "egg-cors": "^2.2.3",
-    "egg-scripts": "^2.11.0"
+    "egg-scripts": "^2.10.0",
+    "mongoose": "5.10.18",
+    "querystring": "^0.2.1",
+    "tencentcloud-sdk-nodejs": "^4.0.80",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "autod": "^3.0.1",
-    "autod-egg": "^1.1.0",
-    "egg-bin": "^4.11.0",
-    "egg-ci": "^1.11.0",
-    "egg-mock": "^3.21.0",
-    "eslint": "^5.13.0",
-    "eslint-config-egg": "^7.1.0"
+    "@midwayjs/cli": "^1.0.0",
+    "@midwayjs/egg-ts-helper": "^1.0.1",
+    "@midwayjs/luckyeye": "^1.0.0",
+    "@midwayjs/mock": "^2.3.0",
+    "@types/jest": "^26.0.10",
+    "@types/mongoose": "~5.10.3",
+    "@types/node": "14",
+    "cross-env": "^6.0.0",
+    "jest": "^26.4.0",
+    "mwts": "^1.0.5",
+    "ts-jest": "^26.2.0",
+    "typescript": "^4.0.0"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-poker-ai",
-    "stop": "egg-scripts stop --title=egg-server-poker-ai",
-    "dev": "egg-bin dev",
-    "debug": "egg-bin debug",
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
-    "lint": "eslint .",
-    "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "start:dev": "egg-scripts start --title=my-midway-project --framework=@midwayjs/web --env=dev",
+    "start:testk8s": "egg-scripts start --title=my-midway-project --framework=@midwayjs/web --env=testk8s",
+    "start:prodk8s": "egg-scripts start --title=my-midway-project --framework=@midwayjs/web --env=prodk8s",
+    "stop": "egg-scripts stop --title=my-midway-project",
+    "start_build": "npm run build && cross-env NODE_ENV=development midway-bin dev",
+    "dev": "cross-env ets && cross-env MIDWAY_SERVER_ENV=dev midway-bin dev --ts",
+    "test": "midway-bin test",
+    "cov": "midway-bin cov",
+    "lint": "mwts check",
+    "lint:fix": "mwts fix",
+    "ci": "npm run cov",
+    "build": "midway-bin build -c",
+    "check": "luckyeye"
   },
-  "ci": {
-    "version": "10"
+  "midway-bin-clean": [
+    ".vscode/.tsbuildinfo",
+    "dist"
+  ],
+  "midway-luckyeye": {
+    "packages": [
+      "midway_v2"
+    ]
   },
   "repository": {
     "type": "git",
