@@ -8,12 +8,6 @@ export default {
   },
 } as EggPlugin;
 
-
-exports.apollojs = {
-  enable: true,
-  package: '@hs/seg-egg-apollojs'
-};
-
 exports.mongoose = {
   enable: true,
   package: 'egg-mongoose'
