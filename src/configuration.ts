@@ -1,10 +1,11 @@
 import { App, Configuration } from '@midwayjs/decorator';
 import { ILifeCycle } from '@midwayjs/core';
 import { Application } from 'egg';
-import * as typegoose from '@midwayjs/typegoose';
+import { join } from 'path';
 
 @Configuration({
-  imports: [typegoose],
+  importConfigs: [join(__dirname, './config')],
+  conflictCheck: true,
 })
 export class ContainerLifeCycle implements ILifeCycle {
   @App()
