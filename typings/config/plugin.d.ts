@@ -15,21 +15,23 @@ import 'egg-static';
 import 'egg-jsonp';
 import 'egg-view';
 import 'midway-schedule';
+import 'egg-cors';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
-    onerror?: EggPluginItem;
-    session?: EggPluginItem;
-    i18n?: EggPluginItem;
-    watcher?: EggPluginItem;
-    multipart?: EggPluginItem;
-    security?: EggPluginItem;
-    development?: EggPluginItem;
-    logrotator?: EggPluginItem;
-    schedule?: EggPluginItem;
-    static?: EggPluginItem;
-    jsonp?: EggPluginItem;
-    view?: EggPluginItem;
-    schedulePlus?: EggPluginItem;
+    'onerror'?: EggPluginItem;
+    'session'?: EggPluginItem;
+    'i18n'?: EggPluginItem;
+    'watcher'?: EggPluginItem;
+    'multipart'?: EggPluginItem;
+    'security'?: EggPluginItem;
+    'development'?: EggPluginItem;
+    'logrotator'?: EggPluginItem;
+    'schedule'?: EggPluginItem;
+    'static'?: EggPluginItem;
+    'jsonp'?: EggPluginItem;
+    'view'?: EggPluginItem;
+    'schedulePlus'?: EggPluginItem;
+    'cors'?: EggPluginItem;
   }
 }
