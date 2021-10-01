@@ -142,20 +142,20 @@ const preGetNextOP = debounce(msgBody => {
   console.log('wpkPro 提示：到我操作了');
   const req = {
     callScore: msgBody.callScore, //  需要跟注的筹码量
-    canActionList: msgBody.canActionList, //  可以执行的操作
-    handCards: msgBody.handCards, //  我的手牌
-    isCanRaise: msgBody.isCanRaise, //  是否可以 re
-    lastBet: msgBody.lastBet, //  最后一位下注的筹码量
-    maxRaiseScore: msgBody.maxRaiseScore, //  最大可以 re 多少
-    minRaiseScore: msgBody.minRaiseScore, //  最少需要 re 多少
-    seatScore: msgBody.seatScore,
-    userId: msgBody.userId, //  用户 id
+    // canActionList: msgBody.canActionList, //  可以执行的操作
+    // handCards: msgBody.handCards, //  我的手牌
+    // isCanRaise: msgBody.isCanRaise, //  是否可以 re
+    // lastBet: msgBody.lastBet, //  最后一位下注的筹码量
+    // maxRaiseScore: msgBody.maxRaiseScore, //  最大可以 re 多少
+    // minRaiseScore: msgBody.minRaiseScore, //  最少需要 re 多少
+    // seatScore: msgBody.seatScore,
+    // userId: msgBody.userId, //  用户 id
     round, //  当前哪条街
-    totalPot, //  底池
-    cardType, //  当前牌型
-    sitUserList: formatSitUserList(), //  位置
-    dealPublicCards, //  公牌
-    actionList, //  步骤
+    // totalPot, //  底池
+    // cardType, //  当前牌型
+    // sitUserList: formatSitUserList(), //  位置
+    // dealPublicCards, //  公牌
+    // actionList, //  步骤
   };
 
   console.log('wpkPro 请求参数构造完成：', req);
