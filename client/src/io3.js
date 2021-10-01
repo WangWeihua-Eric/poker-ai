@@ -89,7 +89,7 @@ const realOP = payLoad => {
 };
 
 const getNextOperating = decodeRes => {
-  fetch('https://node.fengjinketang.com/wpkpro/getnextop', {
+  fetch('https://node.fengjinketang.com/wpkpro/test', {
     method: 'POST',
     body: JSON.stringify(decodeRes),
     headers: {
@@ -296,7 +296,7 @@ const OverloadHMFUtils = () => {
     } else {
       const msgTmp = new Uint8Array(msg);
       const decodeRes = HMFUtils.decodeFun(msgTmp);
-      console.log('1111111111: ', decodeRes);
+      // console.log('1111111111: ', decodeRes);
       formatReq(decodeRes);
       callBack && callBack(decodeRes);
     }
